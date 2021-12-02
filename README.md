@@ -136,7 +136,7 @@ El contador vale 2
 
 Podemos abrir manualmente el fichero estado.txt con un editor de texto y ver el valor del contador. Sin embargo, esta función está limitada a guardar enteros, no permite guardar otro tipo de información tales como cadenas de texto, diccionarios, etc.
 
-Para poder guardar y recuperar (casi) cualquier tipo de objeto en Python, podemos utilizar el módulo ```pickle```. El modulo ```pickle``` implementa protocolos binarios para serializar y deserializar objetos Python. Mediante la función ```pickle.dump``` de este módulo podremos hacer que jerarquı́a de objetos de Python se convierta en una secuencia de bytes, y usando ```pickle.load``` conseguimos la operación inversa, es decir,
+Para poder guardar y recuperar (casi) cualquier tipo de objeto en Python, podemos utilizar el módulo ```pickle```<sup>[1](#pickle)</sup>. El módulo ```pickle``` implementa protocolos binarios para serializar y deserializar objetos Python. Mediante la función ```pickle.dump``` de este módulo podremos hacer que jerarquı́a de objetos de Python se convierta en una secuencia de bytes, y usando ```pickle.load``` conseguimos la operación inversa, es decir,
 convertir una secuencia de bytes de un archivo binario o un objeto tipo binario en una jerarquı́a de objetos.
 
 __**Nota**: El argumento ```pickle.dump``` y ```pickle.load``` debe ser un fichero abierto en modo binario. En los ejemplos de código ya se proporciona esta parte.__
@@ -189,7 +189,7 @@ __**Nota**: Pickle no está limitado a guardar tipos de datos simples como dicci
 
 El formato Pickle es muy potente ya que nos permite serializar casi cualquier objeto Python, pero tiene varias limitaciones. La principal es que es un formato binario especı́fico para Python: otros lenguajes de programación no pueden leerlo, y tampoco es legible por humanos. Como solución, vamos a implementar un formato de serialización que podremos escribir en fichero y que podremos leer tanto con un editor de texto como con cualquier otro lenguaje de programación.
 
-Como desventaja, este enfoque sólo funciona para guardar los tipos de objeto más básicos: números, cadenas de texto, listas y diccionarios. El formato que usaremos es JSON (JavaScript Object Notation), que fue originalmente diseñado para JavaScript pero dada su gran popularidad hoy en dı́a puede ser utilizado desde cualquier lenguaje. En Python podemos leer este formato utilizando el módulo json, de la biblioteca estándar. El módulo nos da funciones para leer y escribir tanto desde cadenas de texto como desde un fichero. El formato JSON es muy parecido a la notación en Python. Podemos ver un ejemplo de uso a continuación, en el que partimos de un diccionario, lo serializamos a formato JSON (```json.dumps```), y después lo
+Como desventaja, este enfoque sólo funciona para guardar los tipos de objeto más básicos: números, cadenas de texto, listas y diccionarios. El formato que usaremos es JSON (JavaScript Object Notation)<sup>[2](#json)</sup>, que fue originalmente diseñado para JavaScript pero dada su gran popularidad hoy en dı́a puede ser utilizado desde cualquier lenguaje. En Python podemos leer este formato utilizando el módulo ```json```, de la biblioteca estándar. El módulo nos da funciones para leer y escribir tanto desde cadenas de texto como desde un fichero. El formato JSON es muy parecido a la notación en Python. Podemos ver un ejemplo de uso a continuación, en el que partimos de un diccionario, lo serializamos a formato JSON (```json.dumps```), y después lo
 deserializamos de vuelta a Python (```json.loads```).
 
 ```
@@ -389,7 +389,7 @@ Para practicar tanto los conceptos de subclases como diferentes opciones de pers
 
 - ```AlmacenBackup``` un almacen que recubre a otro almacén de la clase ```AlmacenFichero``` y guarda una copia del estado cada vez que se guarda.
 
-- ```AlmacenCSV``` un almacén que guarda diccionarios en un fichero CSV. El fichero CSV tendrá dos columnas, una para la clave del diccionario, y otra para el valor. Las claves serán siempre strings, pero el valor ha de ser serializado en formato JSON para escribirlo en el CSV. Al crear el almacen se le proporcionan los nombres de las columnas que puede tener el fichero CSV. 
+- ```AlmacenCSV``` un almacén que guarda diccionarios en un fichero CSV<sup>[3](#csv)</sup>. El fichero CSV tendrá dos columnas, una para la clave del diccionario, y otra para el valor. Las claves serán siempre strings, pero el valor ha de ser serializado en formato JSON para escribirlo en el CSV. Al crear el almacen se le proporcionan los nombres de las columnas que puede tener el fichero CSV. 
 
 - ```AlmacenCSVAvanzado``` (avanzado) un almacén que guarda estados en forma de diccionarios. Para cada clave del diccionario, debe existir una columna en el fichero CSV. Los ficheros resultantes sólo tendrán dos lı́neas: una con las cabeceras del CSV (los nombres de las columnas) y otra con los valores de cada columna.
 
@@ -452,15 +452,13 @@ FAILED (errors=4, skipped=2)
 ```
 ## Entrega de la práctica
 
-Para entregar la práctica, se deberá subir a Moodle en <a href="https://moodle.upm.es/titulaciones/oficiales/mod/assign/view.php?id=208687">este enlace</a> el fichero ```solucion.py```, conteniendo todas las funciones requeridas en la práctica. La práctica debe estar entregada en Moodle antes de las 23:59 del **Viernes 10 de Diciembre**.
+Para entregar la práctica, se deberá subir a Moodle en <a href="https://moodle.upm.es/titulaciones/oficiales/mod/assign/view.php?id=208687">este enlace</a> el fichero ```solucion_p4.py```, conteniendo todas las funciones requeridas en la práctica. La práctica debe estar entregada en Moodle antes de las 23:59 del **Viernes 10 de Diciembre**.
 
 </br>
 </br>
 
 
 ## Enlaces
-<a name="super">1</a>: https://docs.python.org/3/library/functions.html#super </br>
-<a name="stack">2</a>: https://stackoverflow.com/a/1176180 </br>
-<a name="getmembers">3</a>: https://docs.python.org/3/library/inspect.html#inspect.getmembers </br>
-<a name="ismethod">4</a>: https://docs.python.org/3/library/inspect.html#inspect.ismethod </br>
-<a name="decoradores">5</a>: https://python-3-patterns-idioms-test.readthedocs.io/en/latest/PythonDecorators.html </br>
+<a name="pickle">1</a>: https://docs.python.org/3/library/pickle.html</br>
+<a name="json">2</a>: https://www.json.org </br>
+<a name="csv">3</a>: https://docs.python.org/3/library/csv.html </br>
