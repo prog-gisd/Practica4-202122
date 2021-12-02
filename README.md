@@ -76,6 +76,7 @@ _**Nota**: todas las líneas ejecutadas durante una sesión de python o de conso
 -   Uso básico de un IDE (Visual Studio Code) para desarrollar y ejecutar código
 -   Uso de persistencia básica en disco
 -   Uso de diferentes formatos de serialización (JSON, Pickle)
+-   Uso de excepciones
 -   Refuerzo del uso de clases para encapsular estado y comportamiento.
 -   Refuerzo de conceptos básicos de ingenierı́a de software como interfaces
 
@@ -86,9 +87,9 @@ En la práctica anterior desarrollamos un sistema funcional con un conjunto de h
 En esta práctica implementaremos persistencia en nuestras habilidades. Con ella conseguiremos guardar el estado de nuestra aplicación entre ejecuciones. El esquema que seguiremos es el siguiente. Primero, exploraremos diferentes opciones de persistencia de manera independiente, sin tener en cuenta las habilidades de la práctica anterior. Después, actualizaremos las habilidades que ya hemos creado para incluir persistencia y facilitar su uso. En tercer lugar, veremos otras formas de conseguir persistencia y formas de utilizarlas sin modificar el código de las habilidades.
 Finalmente, crearemos habilidades nuevas que harán uso de la persistencia
 
-El primer paso para desarrollar la práctica es descargar los ficheros necesarios del repositorio de Github. El método más sencillo es a través del botón ```Code->Download ZIP```. Los ficheros necesarios para la práctica son  ```solucion_p4.py```, ```estado_int.py```, ```estado_pickle.py```, ```estado_json.py``` y ```test.py```.
+El primer paso para desarrollar la práctica es descargar los ficheros necesarios del repositorio de Github. El método más sencillo es a través del botón ```Code->Download ZIP```. Los ficheros necesarios para la práctica son  ```solucion_p4.py```, ```estado_int.py```, ```estado_pickle.py```, ```estado_json.py``` y ```test.py```. Además, también es necesario el fichero ```habilidades.py``` desarrollado en la práctica anterior, por lo que deberá copiarse dentro de la carpeta de la práctica 4.
 
-El primero es un fichero de plantilla que contiene la definición de varias funciones que son útiles para la práctica (este será el fichero que se debe entregar en Moodle). El fichero ```estado_int.py``` contiene código de ejemplo para la actividad 1. Los ficheros ```estado_pickle.py``` y ```estado_json.py``` son plantillas que podemos usar para desarrollar y probar la segunda parte de la actividad 1 y la actividad 2. Sin embargo, la solución final debe incorporarse en el fichero ```solucion_p4.py```. Para su edición, se puede usar cualquier IDE, aunque se recomienda Visual Studio Code. Para comprobar las soluciones, se proponen dos opciones. Por otro lado, el fichero ```test.py```, se puede usar opcionalmente para comprobar que las funciones desarrolladas en la práctica funcionan correctamente, como veremos más adelante. Además, también es necesario el fichero ```habilidades.py``` desarrollado en la tarea anterior, por lo que deberá copiarse dentro de la carpeta de la práctica 4.
+El primero es un fichero de plantilla que contiene la definición de varias funciones que son útiles para la práctica (este será el fichero que se debe entregar en Moodle). El fichero ```estado_int.py``` contiene código de ejemplo para la actividad 1. Los ficheros ```estado_pickle.py``` y ```estado_json.py``` son plantillas que podemos usar para desarrollar y probar la segunda parte de la actividad 1 y la actividad 2. Sin embargo, la solución final debe incorporarse en el fichero ```solucion_p4.py```. Para su edición, se puede usar cualquier IDE, aunque se recomienda Visual Studio Code. Para comprobar las soluciones, se proponen dos opciones. Por otro lado, el fichero ```test.py```, se puede usar opcionalmente para comprobar que las funciones desarrolladas en la práctica funcionan correctamente, como veremos más adelante.
 
 ## Actividades de la práctica
 
