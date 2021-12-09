@@ -22,7 +22,7 @@ Disponer de una versión de Python igual o superior a 3.10, y del entorno de des
 
 ## Temas relacionados con la práctica
 
-En la realización de este proyecto se ponen en práctica conceptos abordados entre los temas 1 y 7 de la asignatura.
+En la realización de este proyecto se ponen en práctica conceptos abordados entre los temas 1 y 8 de la asignatura.
 
 ## Convenciones
 
